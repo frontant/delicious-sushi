@@ -17,7 +17,6 @@ const paths = new (function() {
     this.componentsDir,
     this.sharedJsDir,
     /node_modules\/@frontant\//,
-    /node_modules\/@frontant-local\//,
   ];
 
   // configuration paths
