@@ -1,0 +1,87 @@
+[is='component-imagetext'] {
+  position: relative;
+
+  .content {
+    padding-top: 20%;
+    padding-bottom: 7em;
+    color: $color_pink;
+    text-align: center;
+  
+    @include media-breakpoint-up(md) {
+      @include grid-col-2(2fr, 3fr, 12%);
+  
+      align-items: center;
+      padding-top: 11%;
+      padding-bottom: 18%;
+      text-align: left;
+    }
+  
+    @include media-breakpoint-up(lg) {
+      padding-top: 10%;
+      padding-bottom: 17%;
+    }
+  
+    @include media-breakpoint-up(xl) {
+      padding-bottom: 15%;
+    }  
+
+    &.invertOrder {
+      @include media-breakpoint-up(md){
+        direction: rtl;
+  
+        > * {
+          direction: ltr;
+        }
+      }
+    }
+  }
+
+
+  .image {
+    @include fixed-ratio(60%, 1);
+
+    margin: 0 auto;
+    opacity: 0;
+    transition: opacity 1.5s ease-out;
+
+    @include media-breakpoint-up(md) {
+      @include fixed-ratio-update(100%, 1);
+    }
+
+    img {
+      display: block;
+      border-radius: 50%;
+    }
+  }
+
+  .text {
+    transform: translateY(50px);
+    opacity: 0;
+    transition: opacity 1.5s ease-out, transform 1.2s ease-out;
+
+    h2 {
+      margin-top: 10%;
+      text-transform: uppercase;
+
+      @include media-breakpoint-up(md) {
+        margin-top: 0; 
+      }
+    }
+
+    p {
+      max-width: 30em;
+      margin: 2em auto;
+    }
+  }
+
+  &.is-triggered {
+    .image {
+      opacity: 1;
+    }
+
+    .text {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}

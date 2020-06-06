@@ -1,0 +1,128 @@
+{% extends 'Components/Document/index.twig' %}
+
+{% block title %}Delicious Sushi{% endblock %}
+
+{% block content %}
+  {% include 'Components/NavigationBar/index.twig' %}
+  {% include 'Components/NavigationMenu/index.twig' %}
+  {% include 'Components/Header/index.twig' %}
+  {% include 'Components/Products/index.twig' with {
+    decorationItems: [
+      {
+        image: 'images/sushi-2.png',
+        position: {
+          x: '-590px',
+          y: '120px'
+        },
+        width: '100px'
+      },
+      {
+        image: 'images/sushi-1.png',
+        position: {
+          x: '500px',
+          y: '20px'
+        },
+      }
+    ]
+  } %}
+  {% include 'Components/ImageText/index.twig' with {
+    image: 'images/food-1.jpg',
+    title: 'Best Tasty',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, iure error. Deserunt mollitia laborum, iste rem minima quam.',
+    link: '#'
+  } %}
+  {% include 'Components/CountUp/index.twig' with {
+    decorationItems: [
+      {
+        image: 'images/sushi-4.png',
+        position: {
+          x: '-500px',
+          y: '180px'
+        },
+        width: '100px'
+      },
+      {
+        image: 'images/sushi-3.png',
+        position: {
+          x: '500px',
+          y: '120px'
+        },
+      }
+    ]
+  } %}
+  {% include 'Components/ImageText/index.twig' with {
+    image: 'images/food-2.jpg',
+    title: 'Delicious',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, iure error. Deserunt mollitia laborum, iste rem minima quam.',
+    link: '#',
+    invertOrder: true,
+    decorationStyle: 'height: calc(100% + 60px);',
+    decorationItems: [
+      {
+        image: 'images/sushi-1.png',
+        position: {
+          x: '200px'
+        }
+      },
+      {
+        image: 'images/sushi-5.png',
+        position: {
+          x: '-500px',
+          y: '80px'
+        },
+        width: '140px'
+      },
+      {
+        image: 'images/sushi-6.png',
+        position: {
+          x: '600px',
+          y: '140px'
+        }
+      },
+      {
+        image: 'images/sushi-2.png',
+        position: {
+          y: '560px'
+        }
+      }
+    ]
+  } %}
+  {% include 'Components/Reviews/index.twig' %}
+  {% include 'Components/SubscriptionForm/index.twig' with {
+    decorationItems: [
+      {
+        image: 'images/sushi-3.png',
+        position: {
+          x: '-500px',
+          y: '70px'
+        }
+      },
+      {
+        image: 'images/sushi-4.png',
+        position: {
+          x: '-200px',
+          y: '500px'
+        },
+      },
+      {
+        image: 'images/sushi-1.png',
+        position: {
+          x: '450px',
+          y: '30px'
+        },
+      }
+    ]
+  } %}
+  {% include 'Components/Footer/index.twig' with {
+    decorationStyle: 'height: calc(100% + 60px);',
+    decorationItems: [
+      {
+        image: 'images/sushi-6.png',
+        position: {
+          x: '500px'
+        },
+        width: '80px'
+      }
+    ]
+  } %}
+{% endblock %}

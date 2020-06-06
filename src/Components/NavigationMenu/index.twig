@@ -1,0 +1,34 @@
+{% set data = {
+  navItems: [
+    {
+      caption: 'home',
+      link: '#'
+    },
+    {
+      caption: 'product',
+      link: '#'
+    },
+    {
+      caption: 'promo',
+      link: '#'
+    },
+    {
+      caption: 'about',
+      link: '#'
+    },
+    {
+      caption: 'contact',
+      link: '#'
+    },
+  ]
+} %}
+
+<nav is="component-navigationmenu">
+  <div class="bar">
+    <a class="logo" href="#">
+      <img src="images/logo.png" alt="logo">
+    </a>
+    {% include './Partials/hamburger.twig' %}
+  </div>
+  {% include './Partials/menu.twig' with { items: data.navItems } %}
+</nav>

@@ -1,0 +1,107 @@
+{% set data = {
+  topics: [
+    {
+      title: 'About',
+      links: [
+        {
+          title: 'History',
+          link: '#'
+        },
+        {
+          title: 'Our Team',
+          link: '#'
+        },
+        {
+          title: 'Brand Guidelines',
+          link: '#'
+        },
+        {
+          title: 'Terms & Condition',
+          link: '#'
+        },
+        {
+          title: 'Privacy Policy',
+          link: '#'
+        }
+      ]
+    },
+    {
+      title: 'Services',
+      links: [
+        {
+          title: 'How to Order',
+          link: '#'
+        },
+        {
+          title: 'Our Product',
+          link: '#'
+        },
+        {
+          title: 'Order Status',
+          link: '#'
+        },
+        {
+          title: 'Promo',
+          link: '#'
+        },
+        {
+          title: 'Payment Method',
+          link: '#'
+        }
+      ]
+    },
+    {
+      title: 'Other',
+      links: [
+        {
+          title: 'Contact Us',
+          link: '#'
+        },
+        {
+          title: 'Help',
+          link: '#'
+        },
+        {
+          title: 'Privacy',
+          link: '#'
+        }
+      ]
+    }
+  ]
+} %}
+
+<footer is="component-footer">
+  <div class="topDecoration top-decoration top-decoration--with-offset">
+    <svg version="1.1" viewBox=".5 -.5 121.79 25.4" xmlns="http://www.w3.org/2000/svg"><path id="Shape" d="m0 0v25.658h123.02v-14.646c-6.6167-2.7952-15.412-3.6027-26.987-1.2113-13.593 2.8083-24.852 15.419-57.947 12.455-22.628-2.0264-27.254-21.063-38.09-22.255z"/></svg>
+  </div>
+  <div class="content container-extra-wide">
+    <div>
+      <h3>Title Here</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae odio dignissimos veniam nesciunt quasi quod illo, quam odit quae voluptas non vitae nobis eum molestiae iste veritatis, eos cumque quidem.</p>
+      <ul class="socialLinks">
+        <li><a class="icon-instagram" href="#"></a></li>
+        <li><a class="icon-facebook" href="#"></a></li>
+        <li><a class="icon-twitter" href="#"></a></li>
+        <li><a class="icon-whatsapp" href="#"></a></li>
+      </ul>
+    </div>
+    <div class="links">
+      {% for topic in data.topics %}
+        <div>
+          <h4 class="is-h3">{{ topic.title }}</h4>
+          <ul>
+            {% for item in topic.links %}
+              <li><a href="{{ item.link }}">{{ item.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% if decorationItems %}
+    {% include 'Components/DecorationImages/index.twig' with {
+      style: decorationStyle,
+      items: decorationItems
+    } %}
+  {% endif %}
+</footer>

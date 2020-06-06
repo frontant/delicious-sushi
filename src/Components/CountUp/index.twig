@@ -1,0 +1,44 @@
+{% set data = {
+  items: [
+    {
+      number: '123',
+      title: 'Store',
+    },
+    {
+      number: '100',
+      title: 'Menu',
+    },
+    {
+      number: '200',
+      title: 'Chef',
+    },
+  ]
+} %}
+
+<div is="component-countup">
+  <div class="top-decoration top-decoration--with-offset">
+    <svg version="1.1" viewBox=".5 -.5 121.32 23.15" xmlns="http://www.w3.org/2000/svg"><path d="m-0.0010741-0.0024866v23.385h122.55v-8.306c-10.246-8.424-25.411-12.235-47.569-1.8996-47.029 21.936-69.005-4.0169-74.979-13.18z"/></svg>
+  </div>
+  <div class="content">
+    <div class="topContent container">
+      <h2>Statistics</h2>
+      <p class="p-md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quisquam modi nam iusto ipsa maxime eveniet illo.</p>
+    </div>
+    <ul class="container-extra-wide">
+      {% for item in data.items %}
+        <li>
+          <div>
+            <div>{{ item.number }}</div>
+            <div class="title">{{ item.title }}</div>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% if decorationItems %}
+    {% include 'Components/DecorationImages/index.twig' with {
+      style: decorationStyle,
+      items: decorationItems
+    } %}
+  {% endif %}
+</div>

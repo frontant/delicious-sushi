@@ -1,0 +1,135 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: $font-size;
+  font-family: $font;
+  line-height: 1.3;
+}
+
+a {
+  color: inherit;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+ul.text-list,
+ul.text-list ul {
+  padding-left: 2em;
+  list-style-type: disc;
+}
+
+ol {
+  padding-left: 2em;
+}
+
+/* Headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0.45em 0;
+  line-height: 1.25em;
+}
+
+h1,
+.is-h1 {
+  font-size: 30px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 40px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 48px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 60px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 75px;
+  }
+}
+
+h2,
+.is-h2 {
+  font-size: 24px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 30px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 36px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 46px;
+  }
+}
+
+h3,
+.is-h3 {
+  margin: 0.7em 0;
+  font-size: 20px;
+
+  @include media-breakpoint-up(md) {
+    font-size: 23px;
+  }
+}
+
+/* Buttons */
+
+.btn {
+  position: relative;
+  display: inline-block;
+  box-sizing: content-box;
+  line-height: 1.15;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &--default {
+    min-width: 120px;
+    padding: 8px 28px;
+    color: $color_white;
+    font-weight: 700;
+    font-size: 0.9em;
+    white-space: nowrap;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: $color_pink;
+    border-radius: calc(#{$font-size} + 12px);
+
+    @include media-breakpoint-up(md) {
+      padding: 12px 30px;
+      font-size: 1em;
+      border-radius: calc(#{$font-size} + 12px);
+    }
+  }
+
+  &--bg-white {
+    color: $color_pink;
+    background-color: white;
+  }
+
+  &--nav {
+    color: $color_white;
+  }
+}

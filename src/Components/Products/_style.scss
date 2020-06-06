@@ -1,0 +1,70 @@
+[is='component-products'] {
+  position: relative;
+  color: $color_white;
+
+  .content {
+    background-color: $color_pink;
+  }
+
+  .topContent {
+    max-width: 450px;
+    margin: 0 auto;
+    margin-bottom: -65px;
+    padding-bottom: 20px;
+    text-align: center;
+    transform: translateY(-65px);
+
+    @include media-breakpoint-up(sm) {
+      max-width: 400px;
+      margin-bottom: -60px;
+      transform: translateY(-60px);
+    }
+
+    @include media-breakpoint-up(md) {
+      max-width: 500px;
+      margin-bottom: -70px;
+      transform: translateY(-70px);
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: -100px;
+      transform: translateY(-100px);
+    }
+
+    @include media-breakpoint-up(xl) {
+      margin-bottom: -130px;
+      transform: translateY(-130px);
+    }
+
+    h2 {
+      margin-top: 0;
+      text-transform: uppercase;
+    }
+  }
+
+  ul {
+    text-align: center;
+
+    @include media-breakpoint-up(md) {
+      @include grid(3);
+    }
+  }
+
+  li {
+    max-width: 400px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+  }
+  
+  .image {
+    @include fixed-ratio(70%, 1);
+
+    margin: 0 auto;
+
+    @include media-breakpoint-up(md) {
+      @include fixed-ratio-update(100%, 1);
+
+      margin: 0;
+    }
+  }
+}

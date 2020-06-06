@@ -1,0 +1,43 @@
+.is-invisible {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+}
+
+.p-md {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  font-size: $font_size;
+
+  @include media-breakpoint-up(md) {
+    font-size: $font_size_md;
+  }
+}
+
+.top-decoration {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  overflow-x: hidden;
+  pointer-events: none;
+
+  svg {
+    position: relative;
+    left: 50%;
+    display: block;
+    width: 101%; // avoids vertical gaps
+    min-width: 700px;
+    transform: translateX(-50%);
+    fill: $color_pink;
+  }
+
+  &--with-offset {
+    top: 1px; // avoids horizontal gaps
+    transform: translateY(-100%);    
+  }
+}

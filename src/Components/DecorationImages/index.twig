@@ -1,0 +1,15 @@
+<div is="component-decorationimages" {{ style ? 'style="' ~ style ~ '"'}}>
+  {% for item in items %}
+    {% set position = {
+      x: item.position.x ?: 0,
+      y: item.position.y ?: 0
+    } %}
+    {% set width = item.width ?: '90px' %}
+    <div style="
+        background-image: url('{{ item.image }}');
+        transform: translate({{ position.x }}, {{ position.y }});
+        width: {{ width }};
+        padding-bottom: {{ width }}">
+    </div>
+  {% endfor %}
+</div>

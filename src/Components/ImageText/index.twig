@@ -1,0 +1,18 @@
+<div is="component-imagetext">
+  <div class="content container-extra-wide {{ invertOrder ? 'invertOrder' }}">
+    <div class="image">
+      <img src="{{ image }}" alt="food">
+    </div>
+    <div class="text">
+      <h2>{{ title }}</h2>
+      <p class="p-md">{{ text }}</p>
+      <a href="{{ link }}" class="btn btn--default">Order Now</a>
+    </div>
+  </div>
+  {% if decorationItems %}
+    {% include 'Components/DecorationImages/index.twig' with {
+      style: decorationStyle,
+      items: decorationItems
+    } %}
+  {% endif %}
+</div>

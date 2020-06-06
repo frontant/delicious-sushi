@@ -1,0 +1,48 @@
+{% set data = {
+  items: [
+    {
+      image: 'images/plate-1.png',
+      title: 'Title here',
+      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+    },
+    {
+      image: 'images/plate-2.png',
+      title: 'Title here',
+      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+    },
+    {
+      image: 'images/plate-3.png',
+      title: 'Title here',
+      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+    },
+  ]
+} %}
+
+<div is="component-products">
+  <div class="top-decoration top-decoration--with-offset">
+    <svg version="1.1" viewBox=".5 -.5 120.68 24.32" xmlns="http://www.w3.org/2000/svg"><path d="m60.491 0.0028782c-6.5764 0.1047-14.024 3.3747-24.229 12.464-17.061 15.195-30.07 8.0186-36.261 2.4675v9.6278h121.9v-8.1414c-7.6575 4.1817-17.629 1.9467-34.422-5.8435-10.598-4.9167-17.975-10.717-26.987-10.574z"/></svg>
+  </div>
+  <div class="content">
+    <div class="topContent container">
+      <h2>Best Seller</h2>
+      <p class="p-md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quisquam modi nam iusto ipsa maxime eveniet illo.</p>
+    </div>
+    <ul class="container">
+      {% for item in data.items %}
+        <li>
+          <div class="image">
+            <img src="{{ item.image }}" alt="sushi">
+          </div>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.content }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% if decorationItems %}
+    {% include 'Components/DecorationImages/index.twig' with {
+      style: decorationStyle,
+      items: decorationItems
+    } %}
+  {% endif %}
+</div>
