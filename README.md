@@ -1,22 +1,24 @@
 # Html Template
 
-## Quick start
-
-The project uses <a href="https://gulpjs.com/">gulp</a> as a build tool. Please install <b>gulp</b> first.
-
-```bash
-# set up the environment
-npm i
-
-# run it
-gulp watch
-
-# open 'http://localhost:3000' and start developing
-```
+<p>
+  View the result <a href="https://frontant.github.io/demo-sites/delicious-sushi-template/">here</a>.
+</p>
 
 ## How to build
 
 ```bash
 # build
-gulp
+npm run build
+```
+
+## How to run the development environment
+
+```bash
+# prepare the environment
+npm i
+
+# run the development mode
+npm run watch
+
+# open 'http://localhost:3000' and start developing
 ```
