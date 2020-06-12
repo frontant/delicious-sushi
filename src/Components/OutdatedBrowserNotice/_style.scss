@@ -1,0 +1,28 @@
+[is='component-outdatedbrowsernotice'] {
+  padding: 8em 0;
+  text-align: center;
+}
+
+body {
+  display: none;
+}
+
+.cssgrid body {
+  display: block;
+
+  [is='component-outdatedbrowsernotice'] {
+    display: none;
+  }
+}
+
+.no-cssgrid body {
+  display: block;
+  
+  > * {
+    display: none;
+  }
+
+  [is='component-outdatedbrowsernotice'] {
+    display: block;
+  }
+}

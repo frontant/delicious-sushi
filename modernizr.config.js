@@ -1,5 +1,5 @@
 module.exports = {
   crawl: false,
   options: ['setClasses'],
-  tests: ['backgroundblendmode'],
+  tests: ['backgroundblendmode', ['cssgrid', 'cssgridlegacy']],
 };
