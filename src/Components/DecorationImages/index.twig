@@ -2,13 +2,15 @@
   {% for item in items %}
     {% set position = {
       x: item.position.x ?: 0,
-      y: item.position.y ?: 0
+      y: item.position.y ?: 0,
+      relativeToBottom: item.position.relativeToBottom ?: false
     } %}
     {% set width = item.width ?: '90px' %}
     <div style="
         background-image: url('{{ item.image }}');
         transform: translate({{ position.x }}, {{ position.y }});
         width: {{ width }};
+        {{ position.relativeToBottom ? 'top: auto; bottom: 0;' }}
         padding-bottom: {{ width }}">
     </div>
   {% endfor %}
